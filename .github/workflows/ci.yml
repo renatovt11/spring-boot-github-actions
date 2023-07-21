@@ -4,8 +4,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Maven compile
-        run: mvn clean verify
+
       - name: Hello World!
         run: echo "Hello from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
+
+      - name: 😊 More and more
+        env:
+          JOB_CONTEXT: ${{toJson(job)}}
+        run: |
+          echo "Job context: $JOB_CONTEXT"
+          echo "Done!"
 name: First workflow
