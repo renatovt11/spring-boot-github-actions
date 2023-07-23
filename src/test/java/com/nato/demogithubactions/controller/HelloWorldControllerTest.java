@@ -8,10 +8,10 @@ class HelloWorldControllerTest {
     private final HelloWorldController controller = new HelloWorldController();
 
     @Test
-    public void testHelloWorld() {
+    void testHelloWorld() {
         String helloWorld = controller.sayHello();
 
-        Assertions.assertThat(helloWorld).isEqualTo("Hello World");
+        Assertions.assertThat(helloWorld).isEqualTo("Hello World!");
     }
 
 }
